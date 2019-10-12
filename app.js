@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var svtech = require('./routes/svtech/svtech');
 var svprofile = require('./routes/svprofile/svprofile');
+var svabout = require('./routes/svabout/svabout');
 
 var app = express();
 
@@ -19,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/', svabout)
 app.use('/svtech', svtech);
 app.use('/svprofile', svprofile);
 
