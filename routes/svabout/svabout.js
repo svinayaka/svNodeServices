@@ -3,10 +3,9 @@ const path = require('path');
 const router = express.Router();
 const MongoClient = require('mongodb').MongoClient;
 const MONGO_URL = require('../../staticUrl').MONGO_URL;
-const CORS = require('cors')
 
 router.get('/', (req, res, next) => {
-    MongoClient.connect(MONGO_URL, (err, client) => {
+    MongoClient.connect(MONGO_URL, { useNewUrlParser: true }, (err, client) => {
         if(err) { res.send('Error').statusCode(400) }
         const collection = client.db('svtech').collection('about');
         const find = collection.find();
