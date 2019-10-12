@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var svabout = require('./routes/svabout/svabout');
 var svtech = require('./routes/svtech/svtech');
 var svprofile = require('./routes/svprofile/svprofile');
-var svabout = require('./routes/svabout/svabout');
 
 var app = express();
 
