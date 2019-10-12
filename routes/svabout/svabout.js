@@ -3,6 +3,7 @@ const path = require('path');
 const router = express.Router();
 const MongoClient = require('mongodb').MongoClient;
 const MONGO_URL = require('../../staticUrl').MONGO_URL;
+const CORS = require('')
 
 router.get('/', (req, res, next) => {
     MongoClient.connect(MONGO_URL, (err, client) => {
