@@ -9,6 +9,8 @@ const CORS = require('cors')
 
 var svabout = require('./routes/svabout/svabout');
 const svtech = require('./routes/svtech/svtech');
+const svtechlink = require('./routes/svtech/svtech-link');
+
 const svprofile = require('./routes/svprofile/svprofile');
 const svProfileContact = require('./routes/svprofile/svProfileContact');
 const svProfileSummary = require('./routes/svprofile/svProfileSummary');
@@ -30,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', svabout)
 app.use('/svtech', svtech);
+app.use('/svtechlink', svtechlink);
 app.use('/svprofile', svprofile);
 app.use('/svprofile/contact', svProfileContact);
 app.use('/svprofile/summary', svProfileSummary);
