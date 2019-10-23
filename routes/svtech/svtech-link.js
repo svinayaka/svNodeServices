@@ -8,7 +8,6 @@ router.get('/', (req, res, next) => {
     MongoClient.connect(MONGO_URL, { useUnifiedTopology: true }, (err, client) => {
         const collection = client.db("svtech").collection("links");
         const find = collection.find();
-        // res.json({"key": "empty"})
         find.forEach((eachLink, err) => {
             if(err) return res.send("Error in fetching links");
             else res.json(eachLink);
